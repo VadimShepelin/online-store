@@ -75,130 +75,14 @@
     </thead>
     <tbody>
     <!-- Пример данных о заказах -->
-    <tr>
-        <td>1001</td>
-        <td>2024-09-10</td>
-        <td>3</td>
-        <td>1500</td>
-    </tr>
-    <tr>
-        <td>1002</td>
-        <td>2024-09-12</td>
-        <td>1</td>
-        <td>500</td>
-    </tr>
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
-    <tr>
-        <td>1003</td>
-        <td>2024-09-15</td>
-        <td>5</td>
-        <td>2500</td>
-    </tr>
-
+    <c:forEach var="order" items="${requestScope.orders}">
+        <tr>
+            <td>${order.getOrder_number()}</td>
+            <td>${order.getOrder_date()}</td>
+            <td>${order.getQuantity()}</td>
+            <td>${order.getPrice()}</td>
+        </tr>
+    </c:forEach>
     <!-- Добавьте дополнительные заказы здесь -->
     </tbody>
 

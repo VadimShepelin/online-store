@@ -1,9 +1,16 @@
 package online_store_project.mapper;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import online_store_project.dto.CreateOrderDto;
 import online_store_project.entity.Order;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CreateOrderDtoMapper implements Mapper<Order, CreateOrderDto>{
+
+    @Getter
+    private static final CreateOrderDtoMapper  INSTANCE = new CreateOrderDtoMapper();
 
     @Override
     public Order map(CreateOrderDto object) {

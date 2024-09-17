@@ -19,6 +19,11 @@ public class OrdersHistoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ReadUserDto user = (ReadUserDto)req.getSession().getAttribute("user");
+        int usersId = user.getUsers_id();
+
+        List<ReadOrderDto> orders = ORDER_SERVICE.findOrders(usersId);
+        req.setAttribute("orders", orders);
 
         req.getRequestDispatcher(JspHelper.getPathToJsp("ordersHistory")).forward(req,resp);
     }
