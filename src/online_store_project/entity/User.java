@@ -2,7 +2,6 @@ package online_store_project.entity;
 
 import lombok.*;
 
-
 @Builder
 @Data
 public class User {

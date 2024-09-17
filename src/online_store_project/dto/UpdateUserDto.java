@@ -1,7 +1,6 @@
 package online_store_project.dto;
 
 import lombok.Builder;
-import lombok.Setter;
 import lombok.Value;
 
 @Builder

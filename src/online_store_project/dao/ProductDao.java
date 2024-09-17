@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import online_store_project.entity.Product;
 import online_store_project.util.ConnectionManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

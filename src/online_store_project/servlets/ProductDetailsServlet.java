@@ -1,12 +1,9 @@
 package online_store_project.servlets;
 
-import lombok.Getter;
 import online_store_project.dto.ReadProductDto;
-import online_store_project.entity.Product;
 import online_store_project.service.ProductService;
 import online_store_project.util.JspHelper;
 import online_store_project.util.UrlPath;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;

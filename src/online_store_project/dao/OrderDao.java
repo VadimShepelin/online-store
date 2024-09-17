@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import online_store_project.entity.Order;
 import online_store_project.util.ConnectionManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +22,7 @@ public class OrderDao implements Dao<Integer,Order>{
     private static final String ADD_ORDER = """
     INSERT INTO orders(order_number, date_of_the_order, user_id, quantity, price) VALUES (?,?,?,?,?) RETURNING *;
     """;
+    private static final String GET_ORDERS = "SELECT * FROM orders WHERE user_id=?";
 
     @Override
     public Order save(Order entity) {
@@ -73,6 +74,26 @@ public class OrderDao implements Dao<Integer,Order>{
         }
     }
 
+    public List<Order> getOrders(int userId) {
+        try(Connection connection = ConnectionManager.get()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ORDERS);
+            preparedStatement.setInt(1, userId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Order> orders = new ArrayList<>();
+            if(resultSet.next()){
+                Order order = orderBuilder(resultSet);
+                orders.add(order);
+            }
+
+            return orders;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @SneakyThrows
     public Order orderBuilder(ResultSet resultSet){
         return Order.builder()
@@ -84,7 +105,5 @@ public class OrderDao implements Dao<Integer,Order>{
                 .quantity(resultSet.getInt("quantity"))
                 .build();
     }
-
-
 
 }
