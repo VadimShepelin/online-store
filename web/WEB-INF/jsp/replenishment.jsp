@@ -103,11 +103,8 @@
 
 <script>
     function toggleRadio(radio) {
-        // Проверяем, есть ли уже выбранная радиокнопка
         const selectedRadio = document.querySelector('input[name="amount"]:checked');
 
-        // Если выбранная радиокнопка существует
-        // то снимаем с нее галочку и устанавливаем галочку на текущую
         if (selectedRadio) {
             selectedRadio.checked = false;
         }

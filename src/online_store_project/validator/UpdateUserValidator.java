@@ -21,7 +21,7 @@ public class UpdateUserValidator implements Validator<UpdateUserDto> {
             validatorResult.addError(new Errors("the password is too short"));
         }
 
-        if(!isPhoneValid(object.getPhone())){
+        if(!isPhoneValid(object.getPhone())&&!object.getPhone().equals("no phone")){
             validatorResult.addError(new Errors("the phone number is not valid"));
         }
 

@@ -36,14 +36,14 @@
             display: inline-block;
             padding: 10px 20px;
             background-color: teal;
-            opacity: 0.50;/* Красный цвет */
+            opacity: 0.50;
             color: white;
             border: none;
             border-radius: 5px;
-            text-decoration: none; /* Убираем подчеркивание */
+            text-decoration: none;
         }
         .logout-button:hover {
-            background-color: #d32f2f; /* Темнее при наведении */
+            background-color: #d32f2f;
         }
         th, td {
             padding: 12px;
@@ -74,7 +74,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Пример данных о заказах -->
     <c:forEach var="order" items="${requestScope.orders}">
         <tr>
             <td>${order.getOrder_number()}</td>
@@ -83,7 +82,6 @@
             <td>${order.getPrice()}</td>
         </tr>
     </c:forEach>
-    <!-- Добавьте дополнительные заказы здесь -->
     </tbody>
 
 </table>

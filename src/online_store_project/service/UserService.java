@@ -13,6 +13,8 @@ import online_store_project.mapper.ReadUserDtoMapper;
 import online_store_project.mapper.UpdateUserDtoMapper;
 import online_store_project.validator.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -29,6 +31,7 @@ public class UserService {
     private static final OrderService ORDER_SERVICE = OrderService.getINSTANCE();
     private static final OrdersProductsService ORDERS_PRODUCTS_SERVICE = OrdersProductsService.getINSTANCE();
     private static final ProductService PRODUCT_SERVICE = ProductService.getINSTANCE();
+    private static List<Integer> productIds = new ArrayList<>();
 
     public static UserService getInstance() {
         return USER_SERVICE;
@@ -84,7 +87,9 @@ public class UserService {
             int totalStock = productChangeStock(productMap);
             Optional<User> user = USER_DAO.payment(totalPrice, usersId);
             Integer orderId = ORDER_SERVICE.saveNewOrder(usersId,totalPrice,totalStock);
-            ORDERS_PRODUCTS_SERVICE.addOrdersProducts(orderId,checkStock);
+
+            productIds.stream().forEach((productId)->ORDERS_PRODUCTS_SERVICE.addOrdersProducts(productId,orderId));
+            productIds.clear();
 
             return Optional.of(READ_USER_DTO_MAPPER.map(user.get()));
             }
@@ -100,7 +105,9 @@ public class UserService {
             if(!entry.getKey().equals("totalPrice")){
                 Integer productId = Integer.parseInt(entry.getKey().replace("count", ""));
                 Integer quantity = Integer.parseInt(entry.getValue()[0]);
+
                 totalStock += quantity;
+                productIds.add(productId);
                 PRODUCT_SERVICE.changeStock(productId, quantity);
             }
     }

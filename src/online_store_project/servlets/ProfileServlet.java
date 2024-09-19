@@ -25,11 +25,11 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ReadUserDto readUserDto = (ReadUserDto) req.getSession().getAttribute("user");
-
+        String phone = req.getParameter("phone");
 
         UpdateUserDto updateUserDto = UpdateUserDto.builder()
                 .users_id(readUserDto.getUsers_id())
-                .phone(req.getParameter("phone").isEmpty() ? "no phone" : req.getParameter("phone"))
+                .phone(phone.isEmpty()||phone.equals("no phone") ? "no phone" : req.getParameter("phone"))
                 .email(req.getParameter("email"))
                 .address(req.getParameter("address").isEmpty() ? "no address" : req.getParameter("address"))
                 .birthday(req.getParameter("birthday"))

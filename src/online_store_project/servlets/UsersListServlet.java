@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(UrlPath.LIST_USERS)
-public class ListUsersServlet extends HttpServlet {
+public class UsersListServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,6 +20,6 @@ public class ListUsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(JspHelper.getPathToJsp("listUsers")).forward(req, resp);
+        req.getRequestDispatcher(JspHelper.getPathToJsp("usersList")).forward(req, resp);
     }
 }

@@ -71,6 +71,6 @@ public class ProductService {
 
 
     public void changeStock(Integer productId, Integer quantity) {
-        PRODUCT_DAO.updateStock(productId,quantity);
+         PRODUCT_DAO.updateStock(productId,quantity);
     }
 }

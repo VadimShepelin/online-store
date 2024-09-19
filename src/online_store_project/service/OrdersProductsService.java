@@ -12,7 +12,7 @@ public class OrdersProductsService {
     private static final OrdersProductsDao ORDERS_PRODUCTS_DAO = OrdersProductsDao.getINSTANCE();
 
     public void addOrdersProducts(int productId, int order_id){
-        ORDERS_PRODUCTS_DAO.addOrdersProducts(order_id,productId);
+        ORDERS_PRODUCTS_DAO.addOrdersProducts(productId,order_id);
     }
 
 }

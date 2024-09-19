@@ -16,7 +16,7 @@ public class CreateOrderDtoMapper implements Mapper<Order, CreateOrderDto>{
     public Order map(CreateOrderDto object) {
         return Order.builder()
                 .order_number(object.getOrder_number())
-                .date_of_the_order(object.getOrder_date())
+                .date_of_the_order(""+object.getOrder_date())
                 .user_id(object.getUser_id())
                 .price(object.getPrice())
                 .quantity(object.getQuantity())

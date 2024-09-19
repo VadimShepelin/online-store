@@ -138,6 +138,7 @@ public class ProductDao implements Dao<Integer,Product> {
             preparedStatement.setInt(2,productId);
 
             preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

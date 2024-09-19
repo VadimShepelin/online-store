@@ -19,7 +19,7 @@ public class OrdersProductsDao implements Dao<Integer,Integer> {
 
 
 
-    public void addOrdersProducts(Integer orderId, Integer productId) {
+    public void addOrdersProducts(Integer productId, Integer orderId) {
         try (Connection connection = ConnectionManager.get()) {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD_ORDERS_PRODUCTS);
 
