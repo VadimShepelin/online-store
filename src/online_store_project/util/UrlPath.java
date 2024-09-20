@@ -15,7 +15,7 @@ public class UrlPath {
     public static final String ADMIN_LOGIN = "/adminLogin";
     public static final String ADMIN_LOGOUT = "/adminLogout";
     public static final String ADD_PRODUCT = "/addProduct";
-    public static final String LIST_USERS = "/listUsers";
+    public static final String USERS_LIST = "/usersList";
     public static final String CATEGORY = "/category";
     public static final String PRODUCT_DETAILS = "/productDetails";
     public static final String BASKET = "/basket";
