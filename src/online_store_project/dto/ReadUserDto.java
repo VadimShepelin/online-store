@@ -2,6 +2,7 @@ package online_store_project.dto;
 
 import lombok.Builder;
 import lombok.Value;
+import online_store_project.entity.BlackList;
 
 @Builder
 @Value
@@ -16,4 +17,5 @@ public class ReadUserDto {
     String gender;
     String birthday;
     String balance;
+    BlackList is_blacklisted;
 }

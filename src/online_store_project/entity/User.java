@@ -13,7 +13,7 @@ public class User {
     double balance;
     String address;
     String phone;
-    boolean is_blacklisted;
+    Boolean is_blacklisted;
     Gender gender;
     String birthday;
 

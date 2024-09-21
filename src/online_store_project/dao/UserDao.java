@@ -7,6 +7,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import online_store_project.util.ConnectionManager;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,7 @@ public class UserDao implements Dao<Integer, User> {
     private static final String REPLENISH_BALANCE = "UPDATE users SET balance = balance + ? WHERE users_id = ? RETURNING *";
     private static final String FIND_USER_BY_ID = "SELECT * FROM users WHERE users_id = ?";
     private static final String PAYMENT = "UPDATE users SET balance = balance - ? WHERE users_id = ? RETURNING *";
+    private static final String FIND_ALL_USERS = "SELECT * FROM users";
 
     @Override
     public void add(User user) {
@@ -40,7 +42,21 @@ public class UserDao implements Dao<Integer, User> {
 
     @Override
     public List<User> findAll() {
-        return List.of();
+        try(Connection connection = ConnectionManager.get()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_USERS);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<User> users = new ArrayList<>();
+            while (resultSet.next()) {
+                users.add(createUser(resultSet));
+            }
+
+            return users;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: kocic
@@ -25,7 +26,7 @@
             border: 1px solid #4caf50;
             padding: 8px;
             text-align: left;
-            background-color:#4caf50;
+            background-color: #4caf50;
             color: white;
         }
         td {
@@ -33,9 +34,6 @@
             padding: 8px;
             text-align: left;
             background-color: #ffffff;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
         }
         .back-button {
             margin-top: 20px;
@@ -48,7 +46,18 @@
             font-size: 16px;
         }
         .back-button:hover {
-            background-color: #388e3c;
+            background-color: #388e3c; /* Темно-зеленый цвет при наведении на кнопку */
+        }
+        .order-history-button {
+            padding: 5px 10px;
+            background-color: #4caf50;; /* Синий цвет для кнопки истории заказов */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-history-button:hover {
+            background-color: forestgreen; /* Темно-синий цвет при наведении */
         }
     </style>
 </head>
@@ -66,32 +75,38 @@
         <th>Телефон</th>
         <th>Баланс</th>
         <th>Черный список</th>
+        <th>История заказов</th> <!-- Новый заголовок для кнопки -->
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Иван</td>
-        <td>Иванов</td>
-        <td>password123</td>
-        <td>ivan@example.com</td>
-        <td>+7 123 456 78 90</td>
-        <td>1000.00 ₽</td>
-        <td><input type="checkbox"></td>
-    </tr>
-    <tr>
-        <td>Мария</td>
-        <td>Петрова</td>
-        <td>mypassword</td>
-        <td>maria@example.com</td>
-        <td>+7 987 654 32 10</td>
-        <td>1500.50 ₽</td>
-        <td><input type="checkbox"></td>
-    </tr>
-
+    <c:forEach var="user" items="${requestScope.allUsers}">
+        <tr>
+            <td>${user.getUser_name()}</td>
+            <td>${user.getSurname()}</td>
+            <td>${user.getUser_password()}</td>
+            <td>${user.getEmail()}</td>
+            <td>${user.getPhone()}</td>
+            <td>${user.getBalance()} ₽</td>
+            <td><input type="checkbox" ${user.getIs_blacklisted()=='True' ? 'checked' : ''} onclick="goToUsersList(${user.getUsers_id()})"></td> <!-- Используйте условие для чекбокса -->
+            <td><button class="order-history-button" onclick="goToOrderHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td> <!-- Кнопка для перехода -->
+        </tr>
+    </c:forEach>
     </tbody>
 </table>
 
 <button class="back-button" onclick="window.history.back();">Назад</button>
+
+<script>
+    function goToOrderHistory(userId) {
+        window.location.href = '/ordersHistoryAdmin?userId=' + userId; // Переход к истории заказов
+    }
+</script>
+
+<script>
+    function goToUsersList(userId) {
+        window.location.href = '/usersList?userId=' + userId; // Переход к истории заказов
+    }
+</script>
 
 </body>
 </html>

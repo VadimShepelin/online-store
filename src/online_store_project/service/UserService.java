@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -136,5 +137,9 @@ public class UserService {
 
     public Optional<ReadUserDto> findUserById(int userId) {
         return USER_DAO.find(userId).map(READ_USER_DTO_MAPPER::map);
+    }
+
+    public List<ReadUserDto> findAllUsers() {
+        return USER_DAO.findAll().stream().map(READ_USER_DTO_MAPPER::map).collect(Collectors.toList());
     }
 }

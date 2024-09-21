@@ -4,8 +4,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_store_project.dto.ReadUserDto;
+import online_store_project.entity.BlackList;
 import online_store_project.entity.User;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -27,6 +29,16 @@ public class ReadUserDtoMapper implements Mapper<ReadUserDto,User> {
                 .phone(object.getPhone())
                 .users_id(object.getId())
                 .balance(String.valueOf(object.getBalance()))
+                .is_blacklisted(checkBlackList(String.valueOf(object.getIs_blacklisted())))
                 .build();
+    }
+
+    private BlackList checkBlackList(String blacklist) {
+        BlackList[] list = new BlackList[1];
+        Arrays.stream(BlackList.values()).forEach((blackListEnum) -> {
+            list[0] = String.valueOf(blackListEnum).toLowerCase().equals(blacklist)?blackListEnum:null;
+        });
+
+        return list[0];
     }
 }
