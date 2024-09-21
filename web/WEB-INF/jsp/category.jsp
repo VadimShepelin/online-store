@@ -163,9 +163,15 @@
 </form>
 
 
-<form action="/basket" method="get" class="w3-display-topright" style="margin-right: 47px;">
+<form action="/basket" method="get" class="w3-display-topright" style="margin-right: 92px;">
     <button class="w3-button" alt="image ex">
         <img src="${pageContext.request.contextPath}/images/application_images/Basket.png" alt="No image" width="30px" height="30px">
+    </button>
+</form>
+
+<form action="/ordersHistory" method="get" class="w3-display-topright" style="margin-right: 47px">
+    <button class="w3-button" alt="image ex">
+        <img src="${pageContext.request.contextPath}/images/application_images/history.png" alt="No image" style="width: 30px;height: 30px" >
     </button>
 </form>
 
@@ -173,9 +179,12 @@
     <button class="w3-button w3-display-topright" alt="image ex">
         <img src="${pageContext.request.contextPath}/images/application_images/Icon.png" alt="No image" style="width: 30px;height: 30px" >
     </button>
+
+
 </form>
 
-<form action="/replenishment" method="get" class="w3-display-topright" style="margin-right: 91px">
+
+<form action="/replenishment" method="get" class="w3-display-topright" style="margin-right: 137px">
     <button class="w3-button" alt="image ex">
         <img src="${pageContext.request.contextPath}/images/application_images/wallet.png" alt="No image" style="width: 30px;height: 30px" >
     </button>
