@@ -7,12 +7,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Список пользователей</title>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список пользователей</title>
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -87,7 +87,17 @@
             <td>${user.getEmail()}</td>
             <td>${user.getPhone()}</td>
             <td>${user.getBalance()} ₽</td>
-            <td><input type="checkbox" ${user.getIs_blacklisted()=='True' ? 'checked' : ''} onclick="goToUsersList(${user.getUsers_id()})"></td> <!-- Используйте условие для чекбокса -->
+
+                <td>
+                    <input type="checkbox"
+                           name="blacklisted"
+                           value="false"
+                           id="blacklistCheckbox"
+                        ${user.getIs_blacklisted() == 'True' ? 'checked' : ''}
+                           onclick="updateCheckboxValue(${user.getUsers_id()})"><!-- Hidden input for checkbox state -->
+                </td>
+
+
             <td><button class="order-history-button" onclick="goToOrderHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td> <!-- Кнопка для перехода -->
         </tr>
     </c:forEach>
@@ -97,14 +107,18 @@
 <button class="back-button" onclick="window.history.back();">Назад</button>
 
 <script>
-    function goToOrderHistory(userId) {
+    function goToUsersList(userId) {
         window.location.href = '/ordersHistoryAdmin?userId=' + userId; // Переход к истории заказов
     }
 </script>
 
 <script>
-    function goToUsersList(userId) {
-        window.location.href = '/usersList?userId=' + userId; // Переход к истории заказов
+    function updateCheckboxValue(userId) {
+        const checkbox = document.getElementById('blacklistCheckbox');
+
+        checkbox.value = checkbox.checked ? 'true' : 'false';
+
+        window.location.href = '/usersList?userId=' + userId+"&value="+checkbox.value;
     }
 </script>
 

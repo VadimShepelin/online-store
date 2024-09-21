@@ -34,6 +34,7 @@ public class UserDao implements Dao<Integer, User> {
     private static final String FIND_USER_BY_ID = "SELECT * FROM users WHERE users_id = ?";
     private static final String PAYMENT = "UPDATE users SET balance = balance - ? WHERE users_id = ? RETURNING *";
     private static final String FIND_ALL_USERS = "SELECT * FROM users";
+    private static final String UPDATE_BLACKLIST = "UPDATE users SET is_blacklisted = ? WHERE users_id = ?";
 
     @Override
     public void add(User user) {
@@ -196,6 +197,19 @@ public class UserDao implements Dao<Integer, User> {
 
             return Optional.empty();
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateBlackList(int user_id, boolean blacklisted) {
+        try(Connection connection = ConnectionManager.get()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BLACKLIST);
+
+            preparedStatement.setBoolean(1, blacklisted);
+            preparedStatement.setInt(2, user_id);
+
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

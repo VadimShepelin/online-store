@@ -39,6 +39,12 @@ public class ReadUserDtoMapper implements Mapper<ReadUserDto,User> {
             list[0] = String.valueOf(blackListEnum).toLowerCase().equals(blacklist)?blackListEnum:null;
         });
 
-        return list[0];
+        if(list[0] == null) {
+            return BlackList.True;
+        }
+
+        else{
+            return BlackList.False;
+        }
     }
 }

@@ -38,6 +38,10 @@ public class UserService {
         return USER_SERVICE;
     }
 
+    public static void changeBlackList(int userId, boolean blacklisted) {
+        USER_DAO.updateBlackList(userId, blacklisted);
+    }
+
     public Integer createUser(CreateUserDto createUserDto){
         ValidatorResult validatorResult = CREATE_USER_VALIDATOR.isDataValid(createUserDto);
         if(!validatorResult.isValid()){
