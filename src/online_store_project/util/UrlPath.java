@@ -22,4 +22,5 @@ public class UrlPath {
     public static final String DELETE_BASKET = "/deleteBasket";
     public static final String REPLENISHMENT = "/replenishment";
     public static final String ORDERS_HISTORY = "/ordersHistory";
+    public static final String ORDERS_HISTORY_ADMIN = "/ordersHistoryAdmin";
 }

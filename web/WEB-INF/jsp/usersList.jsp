@@ -98,7 +98,7 @@
                 </td>
 
 
-            <td><button class="order-history-button" onclick="goToOrderHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td> <!-- Кнопка для перехода -->
+            <td><button class="order-history-button" onclick="goToUsersOrdersHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td> <!-- Кнопка для перехода -->
         </tr>
     </c:forEach>
     </tbody>
@@ -107,8 +107,8 @@
 <button class="back-button" onclick="window.history.back();">Назад</button>
 
 <script>
-    function goToUsersList(userId) {
-        window.location.href = '/ordersHistoryAdmin?userId=' + userId; // Переход к истории заказов
+    function goToUsersOrdersHistory(userId) {
+        window.location.href = '/ordersHistoryAdmin?userId=' + userId;
     }
 </script>
 
