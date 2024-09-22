@@ -41,7 +41,7 @@
             text-decoration: none;
         }
         .logout-button:hover {
-            background-color: #d32f2f;
+            background-color: #388e3c;
         }
         th, td {
             padding: 12px;
@@ -83,7 +83,7 @@
 
 </table>
 
-<form action="/" method="get">
+<form action="/usersList" method="get">
     <td><button type="submit" class="logout-button w3-button">Назад</button></td>
 </form>
 </body>

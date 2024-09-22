@@ -18,6 +18,21 @@
             margin: 20px;
             background-color: #ffffff;
         }
+        .logout-button {
+            margin-top: 20px;
+            width: 110px;
+            height: 43px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #388e3c;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -30,23 +45,10 @@
             color: white;
         }
         td {
-            border: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
             padding: 8px;
             text-align: left;
             background-color: #ffffff;
-        }
-        .back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .back-button:hover {
-            background-color: #388e3c; /* Темно-зеленый цвет при наведении на кнопку */
         }
         .order-history-button {
             padding: 5px 10px;
@@ -104,7 +106,10 @@
     </tbody>
 </table>
 
-<button class="back-button" onclick="window.history.back();">Назад</button>
+<form action="/admin" method="get">
+    <td><button type="submit" class="logout-button w3-button">Назад</button></td>
+</form>
+
 
 <script>
     function goToUsersOrdersHistory(userId) {
