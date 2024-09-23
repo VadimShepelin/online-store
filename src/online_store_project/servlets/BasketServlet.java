@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@WebServlet(UrlPath.BASKET)
+@WebServlet(value=UrlPath.BASKET, name = "basket")
 @MultipartConfig
 public class BasketServlet extends HttpServlet {
     private static final ProductService PRODUCT_SERVICE = ProductService.getINSTANCE();

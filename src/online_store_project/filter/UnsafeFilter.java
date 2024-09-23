@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(servletNames = {"main","profile","category","productDetails"})
+@WebFilter(servletNames = {"main","profile","category","productDetails","basket","deleteBasket","images","logout","ordersHistory","replenishment"})
 public class UnsafeFilter implements Filter {
 
     @Override

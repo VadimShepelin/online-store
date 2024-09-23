@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(UrlPath.ORDERS_HISTORY)
+@WebServlet(value=UrlPath.ORDERS_HISTORY,name = "ordersHistory")
 public class OrdersHistoryServlet extends HttpServlet {
     private static final OrderService ORDER_SERVICE = OrderService.getINSTANCE();
 

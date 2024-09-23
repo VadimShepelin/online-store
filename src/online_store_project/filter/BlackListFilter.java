@@ -24,7 +24,7 @@ public class BlackListFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         ReadUserDto user = (ReadUserDto) request.getSession().getAttribute("user");
 
-        if(user.getIs_blacklisted()== BlackList.True){
+        if(user!=null && user.getIs_blacklisted()== BlackList.True){
             request.getSession().invalidate();
             response.sendRedirect(UrlPath.LOGIN+"?blacklist=true");
 

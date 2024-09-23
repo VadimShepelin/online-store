@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet(UrlPath.REPLENISHMENT)
+@WebServlet(value=UrlPath.REPLENISHMENT, name="replenishment")
 @MultipartConfig
 public class ReplenishmentServlet extends HttpServlet {
 

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(servletNames = {"admin","addProduct"})
+@WebFilter(servletNames = {"admin","addProduct","adminLogout","ordersHistoryAdmin","usersList"})
 public class AdminFilter implements Filter {
 
     @Override

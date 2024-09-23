@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/images/*")
+@WebServlet(value="/images/*",name="images")
 @MultipartConfig
 public class ImagesServlet extends HttpServlet {
     private static final ImageService IMAGE_SERVICE = ImageService.getInstance();

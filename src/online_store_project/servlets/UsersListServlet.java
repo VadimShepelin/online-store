@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(UrlPath.USERS_LIST)
+@WebServlet(value=UrlPath.USERS_LIST, name="usersList")
 public class UsersListServlet extends HttpServlet {
     private static final UserService USER_SERVICE = UserService.getInstance();
 

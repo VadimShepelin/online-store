@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-@WebServlet(UrlPath.DELETE_BASKET)
+@WebServlet(value=UrlPath.DELETE_BASKET,name="deleteBasket")
 public class DeleteBasketServlet extends HttpServlet {
 
     @Override
