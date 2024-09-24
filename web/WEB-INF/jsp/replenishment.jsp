@@ -14,6 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/replenishment.css">
+    <script src="../../js/replenishment.js"></script>
     <title>Пополнение баланса</title>
 </head>
 
@@ -62,17 +63,6 @@
 <form action="/main" method="get" enctype="multipart/form-data">
     <button class="w3-button w3-padding-16 w3-display-bottomleft w3-panel w3-round-xxlarge w3-container w3-teal w3-opacity" style="width: 130px" ><fmt:message key="page.back"/></button>
 </form>
-
-<script>
-    function toggleRadio(radio) {
-        const selectedRadio = document.querySelector('input[name="amount"]:checked');
-
-        if (selectedRadio) {
-            selectedRadio.checked = false;
-        }
-        radio.checked = true;
-    }
-</script>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список пользователей</title>
     <link rel="stylesheet" href="../../css/usersList.css">
+    <script src="../../js/usersList.js"></script>
 </head>
 <body>
 
@@ -61,23 +62,6 @@
 <form action="/admin" method="get">
     <td><button type="submit" class="logout-button w3-button">Назад</button></td>
 </form>
-
-
-<script>
-    function goToUsersOrdersHistory(userId) {
-        window.location.href = '/ordersHistoryAdmin?userId=' + userId;
-    }
-</script>
-
-<script>
-    function updateCheckboxValue(userId) {
-        const checkbox = document.getElementById('blacklistCheckbox');
-
-        checkbox.value = checkbox.checked ? 'true' : 'false';
-
-        window.location.href = '/usersList?userId=' + userId+"&value="+checkbox.value;
-    }
-</script>
 
 </body>
 </html>
