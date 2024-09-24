@@ -12,70 +12,10 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../../css/basket.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина товаров</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .cart {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .cart-item img {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-        }
-        .cart-item h3 {
-            flex: 1;
-            font-size: 12px;
-        }
-        .cart-item input {
-            width: 50px;
-            margin-right: 20px;
-        }
-        .total {
-            font-size: 1.5em;
-            margin-top: 20px;
-            color: red;
-        }
-        .checkout-button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .checkout-button:hover {
-            background-color: #218838;
-        }
-        .delete-button{
-            padding: 10px 20px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .delete-button:hover{
-            background-color:darkred;
-        }
-    </style>
 </head>
 <body>
 <div class="cart">

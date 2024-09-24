@@ -12,53 +12,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/ordersHistory.css">
     <title>История заказов</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .logout-button {
-            margin-top: 20px;
-            width: 110px;
-            height: 43px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: teal;
-            opacity: 0.50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .logout-button:hover {
-            background-color: #d32f2f;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: teal;
-            color: white;
-            opacity: 0.53;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
 </head>
 <body>
 

@@ -7,61 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Список пользователей</title>
+
 <html lang="ru">
 <head>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #ffffff;
-        }
-        .logout-button {
-            margin-top: 20px;
-            width: 110px;
-            height: 43px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .logout-button:hover {
-            background-color: #388e3c;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th {
-            border: 1px solid #4caf50;
-            padding: 8px;
-            text-align: left;
-            background-color: #4caf50;
-            color: white;
-        }
-        td {
-            border-bottom: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            background-color: #ffffff;
-        }
-        .order-history-button {
-            padding: 5px 10px;
-            background-color: #4caf50;; /* Синий цвет для кнопки истории заказов */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .order-history-button:hover {
-            background-color: forestgreen; /* Темно-синий цвет при наведении */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="../../css/usersList.css">
 </head>
 <body>
 

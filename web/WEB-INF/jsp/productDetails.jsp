@@ -13,46 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../../css/productDetails.css">
     <title>Подробности о товаре</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        .product-container {
-            max-width: 600px;
-            flex-wrap: wrap;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            font-size: 30px;
-            color: teal;
-            margin-left: 180px;
-        }
-        .size{
-            font-size: 20px;
-        }
-        .product-image {
-            width: 70%;
-            border-radius: 8px;
-        }
-        .product-title {
-            font-size: 24px;
-        }
-        .product-description {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        .product-price {
-            font-size: 20px;
-            color: #e74c3c;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body class="w3-light-grey">
 
