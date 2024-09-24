@@ -58,7 +58,7 @@
 
 <body>
 <div class="container">
-    <h2>Пополнение баланса</h2>
+    <h2><fmt:message key="page.balance_replenishment"/></h2>
     <form id="rechargeForm" action="/replenishment" method="post" enctype="multipart/form-data">
         <div class="amount-option">
             <label>
@@ -80,12 +80,12 @@
                 <input type="radio" name="amount" value="10000" onclick="toggleRadio(this)"> 10000 ₽
             </label>
         </div>
-        <div class="amount-option">Своя сумма:
+        <div class="amount-option"><fmt:message key="page.own_amount"/>
             <label><br>
-                <input type="number" onclick="toggleRadio(this)" name="customAmount" placeholder="Введите свою сумму" min="100">
+                <input type="number" onclick="toggleRadio(this)" name="customAmount" placeholder="<fmt:message key="page.your_amount"/>" min="100">
             </label>
         </div>
-        <button class="button" type="submit">Пополнить</button>
+        <button class="button" type="submit"><fmt:message key="page.replenish"/></button>
     </form>
 
     <c:if test="${requestScope.error!=null}">
@@ -98,7 +98,7 @@
 </div>
 
 <form action="/main" method="get" enctype="multipart/form-data">
-    <button class="w3-button w3-padding-16 w3-display-bottomleft w3-panel w3-round-xxlarge w3-container w3-teal w3-opacity" style="width: 130px" >Назад</button>
+    <button class="w3-button w3-padding-16 w3-display-bottomleft w3-panel w3-round-xxlarge w3-container w3-teal w3-opacity" style="width: 130px" ><fmt:message key="page.back"/></button>
 </form>
 
 <script>

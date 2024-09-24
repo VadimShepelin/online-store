@@ -79,7 +79,7 @@
 </head>
 <body>
 <div class="cart">
-    <h1>Корзина товаров</h1>
+    <h1><fmt:message key="page.basket"/></h1>
     <form action="/basket" method="post" enctype="multipart/form-data" onsubmit="return updateInputPrice()">
     <c:forEach var="product" items="${sessionScope.basketList}">
         <div class="cart-item" data-price="${product.getNew_price()}">
@@ -94,9 +94,9 @@
 
 
         <input type="hidden" name="totalPrice" id="totalPriceInput" value="0">
-        <div class="total" >Итого: <span id="totalPrice"></span></div>
-        <button class="checkout-button" onclick="checkout()">Оформить заказ</button>
-        <button formaction="/deleteBasket" class="delete-button w3-right-align"  onclick="checkout()">Удалить товары</button>
+        <div class="total" ><fmt:message key="page.summary"/><span id="totalPrice"></span></div>
+        <button class="checkout-button" onclick="checkout()"><fmt:message key="page.place_an_order"/></button>
+        <button formaction="/deleteBasket" class="delete-button w3-right-align"  onclick="checkout()"><fmt:message key="page.delete_products"/></button>
     </form>
 
     <c:if test="${requestScope.error!=null}">
@@ -111,7 +111,7 @@
 </div>
 
 <form action="/main" method="get" enctype="multipart/form-data">
-    <button class="w3-button w3-padding-16 w3-display-bottomleft w3-panel w3-round-xxlarge w3-container w3-teal w3-opacity" style="width: 130px" >Назад</button>
+    <button class="w3-button w3-padding-16 w3-display-bottomleft w3-panel w3-round-xxlarge w3-container w3-teal w3-opacity" style="width: 130px" ><fmt:message key="page.back"/></button>
 </form>
 
 <script>

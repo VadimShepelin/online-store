@@ -57,20 +57,20 @@
 <body class="w3-light-grey">
 
 <div class="product-container ">
-    <h2 class="header">Детали товара</h2><br>
+    <h2 class="header"><fmt:message key="page.product_details"/></h2><br>
 
     <img src="/images/${requestScope.product.getImage()}" alt="Название товара" class="product-image" style="margin-left: 85px"  height="400px">
     <br>
-    <b class="size">Название:</b>
+    <b class="size"><fmt:message key="page.name"/></b>
     <h1 class="product-title">${requestScope.product.getProduct_name()}</h1>
 
-    <b class="size">Описание:</b>
+    <b class="size"><fmt:message key="page.description"/></b>
     <p class="product-description">${requestScope.product.getDescription()}</p>
 
-    <p class="product-price">Цена: ${requestScope.product.getNew_price()} ₽</p>
+    <p class="product-price"><fmt:message key="page.price"/>${requestScope.product.getNew_price()} ₽</p>
 
     <form action="/productDetails" method="post" enctype="multipart/form-data">
-        <button type="submit" value="${requestScope.product.getProduct_id()}" name="id"  class="w3-button w3-round w3-panel w3-blue w3-padding-16">Добавить в корзину</button>
+        <button type="submit" value="${requestScope.product.getProduct_id()}" name="id"  class="w3-button w3-round w3-panel w3-blue w3-padding-16"><fmt:message key="page.add_to_basket"/></button>
     </form>
 
     <c:if test="${requestScope.error!=null}">

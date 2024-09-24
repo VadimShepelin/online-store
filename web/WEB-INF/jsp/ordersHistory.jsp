@@ -62,15 +62,15 @@
 </head>
 <body>
 
-<h1>История заказов</h1>
+<h1><fmt:message key="page.orders_history"/></h1>
 
 <table>
     <thead>
     <tr>
-        <th>Номер заказа</th>
-        <th>Дата заказа</th>
-        <th>Количество товара</th>
-        <th>Сумма заказа (₽)</th>
+        <th><fmt:message key="page.order_number"/></th>
+        <th><fmt:message key="page.order_date"/></th>
+        <th><fmt:message key="page.quantity_of_goods"/></th>
+        <th><fmt:message key="page.order_amount"/> (₽)</th>
     </tr>
     </thead>
     <tbody>
@@ -87,7 +87,7 @@
 </table>
 
 <form action="/main" method="get">
-    <td><button type="submit" class="logout-button w3-button">Назад</button></td>
+    <td><button type="submit" class="logout-button w3-button"><fmt:message key="page.back"/></button></td>
 </form>
 
 </body>
