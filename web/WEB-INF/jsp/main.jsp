@@ -11,48 +11,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Books for you!</title>
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body class="w3-light-gray">
+
 <div  class="w3-container w3-teal w3-opacity w3-left-align">
     <h1><fmt:message key="page.online_store_name"/> </h1>
 </div>
-
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .sidebar {
-        width: 250px;
-        background-color: #f4f4f4;
-        padding: 15px;
-        position: fixed;
-        height: 100%;
-        overflow-y: auto;
-    }
-    .sidebar h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-    .category {
-        margin: 10px 0;
-    }
-    .category a {
-        text-decoration: none;
-        color: #333;
-        padding: 8px 10px;
-        display: block;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-    .category a:hover {
-        background-color: #ddd;
-    }
-</style>
-</head>
 
 <div class="sidebar">
     <h2><fmt:message key="page.books_category"/> </h2>

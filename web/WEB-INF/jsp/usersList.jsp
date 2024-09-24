@@ -29,7 +29,7 @@
         <th>Телефон</th>
         <th>Баланс</th>
         <th>Черный список</th>
-        <th>История заказов</th> <!-- Новый заголовок для кнопки -->
+        <th>История заказов</th>
     </tr>
     </thead>
     <tbody>
@@ -48,11 +48,11 @@
                            value="false"
                            id="blacklistCheckbox"
                         ${user.getIs_blacklisted() == 'True' ? 'checked' : ''}
-                           onclick="updateCheckboxValue(${user.getUsers_id()})"><!-- Hidden input for checkbox state -->
+                           onclick="updateCheckboxValue(${user.getUsers_id()})">
                 </td>
 
 
-            <td><button class="order-history-button" onclick="goToUsersOrdersHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td> <!-- Кнопка для перехода -->
+            <td><button class="order-history-button" onclick="goToUsersOrdersHistory(${user.getUsers_id()})">Перейти к истории заказов</button></td>
         </tr>
     </c:forEach>
     </tbody>
