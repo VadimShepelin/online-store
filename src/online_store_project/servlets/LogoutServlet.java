@@ -1,7 +1,6 @@
 package online_store_project.servlets;
 
 import online_store_project.util.UrlPath;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

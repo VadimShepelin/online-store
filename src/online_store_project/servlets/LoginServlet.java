@@ -1,11 +1,9 @@
 package online_store_project.servlets;
 
 import online_store_project.dto.ReadUserDto;
-import online_store_project.exception.ValidationException;
 import online_store_project.service.UserService;
 import online_store_project.util.JspHelper;
 import online_store_project.util.UrlPath;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;

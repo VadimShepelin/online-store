@@ -4,8 +4,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_store_project.dto.UpdateUserDto;
-import online_store_project.entity.Gender;
-import online_store_project.util.LocalDateFormatter;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UpdateUserValidator implements Validator<UpdateUserDto> {

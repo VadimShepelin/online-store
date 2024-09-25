@@ -1,8 +1,5 @@
 package online_store_project.util;
 
-import lombok.experimental.UtilityClass;
-
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;

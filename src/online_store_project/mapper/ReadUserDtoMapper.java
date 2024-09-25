@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import online_store_project.dto.ReadUserDto;
 import online_store_project.entity.BlackList;
 import online_store_project.entity.User;
-
 import java.util.Arrays;
-import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ReadUserDtoMapper implements Mapper<ReadUserDto,User> {

@@ -1,7 +1,5 @@
 package online_store_project.dao;
 
-import online_store_project.entity.Order;
-
 import java.util.List;
 import java.util.Optional;
 

@@ -1,6 +1,5 @@
 package online_store_project.servlets;
 
-import online_store_project.dto.ReadProductDto;
 import online_store_project.dto.ReadUserDto;
 import online_store_project.service.ProductService;
 import online_store_project.service.UserService;
@@ -13,11 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @WebServlet(value=UrlPath.BASKET, name = "basket")
 @MultipartConfig

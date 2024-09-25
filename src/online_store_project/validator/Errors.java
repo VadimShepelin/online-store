@@ -1,7 +1,5 @@
 package online_store_project.validator;
 
-import java.util.Arrays;
-
 public class Errors  {
     private static final String ERROR_BASE = "Error:";
     private final String error;

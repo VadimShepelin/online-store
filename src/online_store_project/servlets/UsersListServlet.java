@@ -4,17 +4,13 @@ import online_store_project.dto.ReadUserDto;
 import online_store_project.service.UserService;
 import online_store_project.util.JspHelper;
 import online_store_project.util.UrlPath;
-
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet(value=UrlPath.USERS_LIST, name="usersList")
 public class UsersListServlet extends HttpServlet {
