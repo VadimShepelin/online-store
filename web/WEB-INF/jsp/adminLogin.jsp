@@ -18,7 +18,7 @@
 <body  class="w3-light-grey">
 <div class="login-container" >
     <h2>Вход в админ-панель</h2>
-    <form action="/adminLogin" method="post" enctype="multipart/form-data" style="width: 350px;height: 220px">
+    <form action="/adminLogin?admin=login" method="post" enctype="multipart/form-data" style="width: 350px;height: 220px">
         <div class="form-group">
             <label for="name">Имя админа:</label>
             <input type="text" id="name" name="name" required>
