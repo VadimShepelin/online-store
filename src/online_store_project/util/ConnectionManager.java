@@ -10,6 +10,7 @@ public class ConnectionManager {
     private static final String URL_KEY = "db.url";
     private static final String PASSWORD_KEY = "db.password";
     private static final String NAME_KEY = "db.name";
+    private static final String DRIVER_KEY = "db.driver";
 
     static{
         loadDriver();
@@ -17,7 +18,7 @@ public class ConnectionManager {
 
     private static void loadDriver() {
         try{
-            Class.forName("org.postgresql.Driver");
+            Class.forName(PropertiesHelper.getInstance().getProperty(DRIVER_KEY));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
